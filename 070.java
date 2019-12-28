@@ -28,7 +28,7 @@
 //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
     public int climbStairs(int n) {
-        // Faibonacci
+        // Fibonacci
         if (n <= 2) return n;
         int f1 = 1;
         int f2 = 2;
