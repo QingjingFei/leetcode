@@ -19,22 +19,35 @@
 
 //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
+//    // 方法一：自顶向下业务逻辑型编程示例
+//    public boolean isPalindrome(String s) {
+//        // 自顶向下编程
+//        // 1. filter out number & char; 2. reverse; 3. compare
+//        String _filteredS = _filterNonNumberAndChar(s);
+//
+//        String _reversedS = _reverseString(_filteredS);
+//
+//        return _reversedS.equalsIgnoreCase(_filteredS);
+//    }
+//
+//    private String _reverseString(String s) {
+//        return new StringBuilder(s).reverse().toString();
+//    }
+//
+//    private String _filterNonNumberAndChar(String s) {
+//        return s.replaceAll("[^A-Za-z0-9]", "");
+//    }
+
+    // 方法二：双指针法
     public boolean isPalindrome(String s) {
-        // 自顶向下编程
-        // 1. filter out number & char; 2. reverse; 3. compare
-        String _filteredS = _filterNonNumberAndChar(s);
-
-        String _reversedS = _reverseString(_filteredS);
-
-        return _reversedS.equalsIgnoreCase(_filteredS);
-    }
-
-    private String _reverseString(String s) {
-        return new StringBuilder(s).reverse().toString();
-    }
-
-    private String _filterNonNumberAndChar(String s) {
-        return s.replaceAll("[^A-Za-z0-9]", "");
+        char[] c = s.toCharArray();
+        for (int i = 0, j = c.length - 1; i < j; ) {
+            if (!Character.isLetterOrDigit(c[i])) i++;
+            else if (!Character.isLetterOrDigit(c[j])) j--;
+            else if (Character.toLowerCase(c[i++]) != Character.toLowerCase(c[j--]))
+                return false;
+        }
+        return true;
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
