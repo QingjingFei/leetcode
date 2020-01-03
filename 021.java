@@ -23,9 +23,9 @@ import java.util.LinkedList;
  * }
  */
 // 思路：
-// 1. 递归，两个链表中头部元素较小者，用它剩余的元素与另一个链表merge
-// 2. (利用reference机制)创建新链表，只有一个头节点。
-//    两个指针遍历两链表，新链表节点指向遍历中值较小的节点
+// 1. 递归，两个链表中头部元素较小者，用它剩余的元素与另一个链表merge。
+// 2. （基于java reference）创建新链表，只有一个头节点；
+//    两个指针遍历两链表，新链表节点指向遍历中值较小的节点。
 class Solution {
     public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
         if (l1 == null) return l2;
