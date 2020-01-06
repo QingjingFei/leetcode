@@ -46,7 +46,11 @@ import java.util.HashMap;
 //}
 class Solution {
     public int[] twoSum(int[] nums, int target) {
-        Map<Integer, Integer> map = new HashMap<>();
+//        Map<Integer, Integer> map = new HashMap<>();
+        // 阿里java规范推荐的哈希的初始化
+        // 建议：
+        // 所有集合类的问题 如果能预估到准确的取值范围 直接规定好了 是最节省开销 也最高效的解决问题方案了
+        Map<Integer, Integer> map = new HashMap<>((int) ((float) nums.length / 0.75F + 1.0F));
         for (int i = 0; i < nums.length; i++) {
             int complement = target - nums[i];
             if (map.containsKey(complement))
