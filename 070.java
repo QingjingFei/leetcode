@@ -29,6 +29,7 @@
 class Solution {
     public int climbStairs(int n) {
         // Fibonacci
+        // 该题用递归会超出运行时间
         if (n <= 2) return n;
         int f1 = 1;
         int f2 = 2;
