@@ -24,6 +24,7 @@ import java.util.ArrayList;
 // 思路：
 // 1. 递归，Time O(numRows^2) and Space O(numRows^2)，递归的时间复杂度要推导
 // 2. 迭代，Time O(numRows^2) and Space O(numRows^2)
+// 3. 错一位再逐个相加
 class Solution {
     public List<List<Integer>> generate(int numRows) {
         List<List<Integer>> triangle = new ArrayList<>();
@@ -61,6 +62,11 @@ class Solution {
             result.add(list);
         }
         return result;
+    }
+}
+class Solution {
+    public List<List<Integer>> generate(int numRows) {
+
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
