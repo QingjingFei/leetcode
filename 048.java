@@ -52,7 +52,8 @@
 //  1  2  3    1 4 7    7 4 1
 //  4  5  6 => 2 5 8 => 8 5 2
 //  7  8  9    3 6 9    9 6 3
-// 2. 对于尺寸为n*n的矩阵，其任意(i, j)点，旋转后的坐标为(j, n - 1 - i)
+// 2. 循环替换法？极容易出错！
+//  对于尺寸为n*n的矩阵，其任意(i, j)点，旋转后的坐标为(j, n - 1 - i)
 class Solution {
   public void rotate(int[][] matrix) {
     for (int i = 0; i < matrix.length; i++) {
