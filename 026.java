@@ -41,16 +41,15 @@
 
 
 //leetcode submit region begin(Prohibit modification and deletion)
-// 两个指针i和j，其中i是慢指针j是快指针；
-// nums[i] == nums[j]，就增加j以跳过重复项。
+// 思路：快慢双指针 Time O(n), Space O(1)
 class Solution {
     public int removeDuplicates(int[] nums) {
-        int i = 0;
-        for (int j = 1; j < nums.length; ++j) {
-            while (nums[j] != nums[i])
-                nums[++i] = nums[j];
+        if (nums.length < 2) return nums.length;
+        int slow = 0;
+        for (int fast = 1; fast < nums.length; fast++) {
+            if (nums[fast] != nums[slow]) nums[++slow] = nums[fast];
         }
-        return i + 1;
+        return slow + 1;
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
