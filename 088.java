@@ -25,6 +25,20 @@
 // 2. 双指针从前往后，时间复杂度O(m+n)，空间复杂度O(m)
 // 3. 双指针从后往前，时间复杂度O(m+n)，空间复杂度O(1)
 class Solution {
+    // 3的自写版本
+    public void merge(int[] nums1, int m, int[] nums2, int n) {
+        int i = m - 1, j = n - 1, k = m + n - 1;
+        while (j >= 0) {
+            if (i >= 0) {
+                nums1[k--] = (nums1[i] < nums2[j]) ? nums2[j--] : nums1[i--];
+            } else {
+                nums[k--] = nums2[j--];
+            }
+        }
+    }
+}
+class Solution {
+    // 3的模范版本
     public void merge(int[] nums1, int m, int[] nums2, int n) {
         int i = m - 1, j = n - 1, k = m + n - 1;
         while (j >= 0) {
