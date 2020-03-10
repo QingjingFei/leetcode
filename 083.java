@@ -26,12 +26,12 @@
 // 与26.删除排序数组中的重复项相似（链表版！）
 class Solution {
     public ListNode deleteDuplicates(ListNode head) {
-        ListNode node = head;
-        while (node != null && node.next != null) {
-            if (node.val == node.next.val)
-                node.next = node.next.next;
+        ListNode curr = head;
+        while (curr != null && curr.next != null) {
+            if (curr.val == curr.next.val)
+                curr.next = curr.next.next;
             else
-                node = node.next;
+                curr = curr.next;
         }
         return head;
     }
