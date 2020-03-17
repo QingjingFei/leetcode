@@ -42,20 +42,21 @@ import javax.swing.tree.TreeNode;
 // 思路：
 // 1. 递归，检查节点的左孩子是否等于节点的右孩子……
 // 2. 用栈，代码又复杂，运行效率又低
-//class Solution {
-//    // 思路1
-//    public boolean isSymmetric(TreeNode root) {
-//        if (root == null) return true;
-//        return isMirror(root.left, root.right);
-//    }
-//    public boolean isMirror(TreeNode p, TreeNode q) {
-//        if (p == null && q == null) return true;
-//        if (p == null && q == null) return false;
-//        return (p.val == q.val) && isMirror(p.left, q.right) && isMirror(p.right, q.left);
-//    }
-//}
 class Solution {
-    // 思路1
+    // 思路1的直观写法
+    public boolean isSymmetric(TreeNode root) {
+        if (root == null) return true;
+        return isMirror(root.left, root.right);
+    }
+    public boolean isMirror(TreeNode p, TreeNode q) {
+        if (p == null && q == null) return true;
+        if (p == null && q != null) return false;
+        if (p != null && q == null) return false;
+        return (p.val == q.val) && isMirror(p.left, q.right) && isMirror(p.right, q.left);
+    }
+}
+class Solution {
+    // 思路1的高效简写
     public boolean isSymmetric(TreeNode root) {
         return root == null || isSymmetricHelp(root.left, root.right);
     }
