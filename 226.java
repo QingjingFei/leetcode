@@ -41,6 +41,12 @@ import java.util.LinkedList;
  *     TreeNode(int x) { val = x; }
  * }
  */
+// 思路：
+// 1. 递归
+// 2. 只要是递归，深度太深就存在程序调用栈溢出的风险；
+//    只要是递归，就可以用栈解决。
+// 3. 队列
+// 注意：本题的栈和队列仅用作临时存储容器，出栈和出队列顺序并不影响left与right指针。
 class Solution {
     public TreeNode invertTree(TreeNode root) {
         if (root == null) return null;
@@ -51,7 +57,10 @@ class Solution {
         return root;
     }
 }
-
+/*
+出栈顺序是：4, 2, 1, 3, 7, 6, 9
+但出栈顺序并不影响最终root的left与right指针指向。
+ */
 class Solution {
     public TreeNode invertTree(TreeNode root) {
         if (root == null) return null;
@@ -69,7 +78,10 @@ class Solution {
         return root;
     }
 }
-
+/*
+出队列顺序是：4, 7, 3, 9, 6, 3, 1
+但出队列顺序并不影响最终root的left与right指针指向。
+ */
 class Solution {
     public TreeNode invertTree(TreeNode root) {
         if (root == null) return null;
