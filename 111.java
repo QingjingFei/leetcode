@@ -28,6 +28,10 @@
  *     TreeNode(int x) { val = x; }
  * }
  */
+// 思路：
+// 与104二叉树的最大深度的区别就在于Math.min()
+// 而Math.min()会导致需要处理左右子树单独为null的情况
+// 所以相对于104多了2行处理代码
 class Solution {
     public int minDepth(TreeNode root) {
         if (root == null)	return 0;
