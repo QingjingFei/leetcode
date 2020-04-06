@@ -29,8 +29,8 @@ import java.util.PriorityQueue;
 // 若小于，不处理；若大于，删除堆顶元素，插入数字。
 // 时间复杂度为nlogk
 class KthLargest {
-  final PriorityQueue<Integer> q;
-  final int size;
+  private PriorityQueue<Integer> q;
+  private int size;
 
   public KthLargest(int k, int[] nums) {
     size = k;
